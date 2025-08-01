@@ -8,8 +8,8 @@ from tqdm import tqdm  # ✅ 用于显示进度条
 import time
 T = 0.1
 #TOP_P = 0.9  # ✅ 设置 top_p 限制尾部采样
-image_file_base = "./playground/data/images_pretrained_member10k"
-input_dir = "./playground/data/input/pretrained_member_group1.json"
+image_file_base = "./playground/data/images_pretrained_member"
+input_dir = "./playground/data/input/pretrained_member_group.json"
 output_dir = "./playground/data/out_put_new"
 os.makedirs(output_dir, exist_ok=True)
 BEAMS_LIST = [2, 4, 8]
@@ -57,7 +57,7 @@ def main():
             image_path = os.path.join(image_file_base, item["image"])
             image = Image.open(image_path).convert("RGB")
             temp = clean_image_tag(item["conversations"][0]["value"])
-            prompt = temp
+            prompt = f"{temp}Beside, please provide your confidence score out of 100 at the end of your response, formatted as a number. Do not include any extra words, just the score."
             print(prompt)
             print(f"🔹 Image {idx+1}/{total} | Temperature={T}")
             time1 = time.time()
@@ -81,6 +81,9 @@ def main():
                     output = "[SKIPPED]"
                 else:
                     raise e
+            time2 = time.time()
+            print(time2)
+            runtime = time2 - time1
             results.append({
                     "id": item["id"],
                     "temperature": T,
@@ -88,6 +91,7 @@ def main():
                     "question": prompt,
                     "ground_truth": clean_image_tag(item["conversations"][1]["value"]),
                     "generated": output,
+                    "runtime": runtime
                 })     
 
             if idx % 10 == 0:
