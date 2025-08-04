@@ -21,10 +21,10 @@ Next, follow the [Visual Instruction Tuning](https://github.com/haotian-liu/LLaV
 
 ### Qwen2-VL
 
-To quickly setup the environment,you can follow the [Qwen2-VL-Train](https://github.com/QwenLM/Qwen2.5-VL/blob/main/qwen-vl-finetune/README.md) instructions to configure checkpoints and parameters and follow the step to complete the finetuning work.
+To quickly setup the environment,you can follow the [Qwen2-VL-Train](https://github.com/QwenLM/Qwen2.5-VL/blob/main/qwen-vl-finetune/README.md) instructions to configure checkpoints and parameters and follow the step to complete the finetuning work.For the data here,we still use the `llava_instruct_158k.json` to unified them.
 
 ## Raw data acquisition
 
 ### LLaVA
 
-Use the 
+Use the 'generate_new.py' to get the conversations which contains the data we need.Then 
