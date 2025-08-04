@@ -31,4 +31,7 @@ Use the 'generate_new.py' to get the conversations which contains the data we ne
 
 ### Qwen2-VL
 
-Use the 
+Use the 'conversation.py' to get the conversations which contains the data we need.Then use 'extract_confidence.py' and 'plot_cs_distribution.py' to caculate the metric we want.
+
+## Inference Attack
+Run the 'MIA_GROUP' to Conducting membership inference attacks. 
