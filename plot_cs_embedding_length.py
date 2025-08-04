@@ -43,9 +43,10 @@ def calculate_features(row):
 
 if __name__ == '__main__':
     print('Loading data...')
-    df_pretrain = load_data('llava-7b-llama-chat-data/generate_data1/pretrained_member_group1_0.2.json', 'pretrain_member')
-    df_nonmember = load_data('llava-7b-llama-chat-data/generate_data1/nonmember_group3_0.2.json', 'nonmember')
-    df_finetune = load_data('llava-7b-llama-chat-data/generate_data1/finetune_member_group39_0.2.json', 'finetune_member')
+    #input your json files here
+    df_pretrain = load_data('', 'pretrain_member')
+    df_nonmember = load_data('', 'nonmember')
+    df_finetune = load_data('', 'finetune_member')
 
     print('merging data...')
     df = pd.concat([df_pretrain, df_nonmember, df_finetune], ignore_index=True)
@@ -90,3 +91,4 @@ if __name__ == '__main__':
     print("分析结果已保存到:")
     print("- member_analysis.png (可视化图表)")
     print("- all_data_with_features.csv (带特征的全部数据)")
+
