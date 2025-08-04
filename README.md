@@ -27,4 +27,8 @@ To quickly setup the environment,you can follow the [Qwen2-VL-Train](https://git
 
 ### LLaVA
 
-Use the 'generate_new.py' to get the conversations which contains the data we need.Then 
+Use the 'generate_new.py' to get the conversations which contains the data we need.Then use 'extract_confidence.py' and 'plot_cs_distribution.py' to caculate the metric we want.
+
+### Qwen2-VL
+
+Use the 
